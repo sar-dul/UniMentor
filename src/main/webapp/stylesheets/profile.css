@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center; /*center vertically */
+  align-items: center; /* center horizontally */
+  background: lightblue;
+  padding: 10px;
+}
+
+.upload{
+    width: 100px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .upload img{
+    border-radius: 50%;
+    border: 6px solid #eaeaea;
+  }
+  
+  .upload .round{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: lightseagreen;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .upload .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+  }
+  
+  input[type=file]::-webkit-file-upload-button{
+      cursor: pointer;
+  }
+  
+/* container and form */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  border: 3px solid black; /* Thick border */
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 40px;
+  background: black;
+  left: 0;
+  bottom: 0;
+}
+
+.container form .user__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+/* inside the form user details */
+form .user__details .input__box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.user__details .input__box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.user__details .input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+
+
+form input[type="radio"] {
+  display: none;
+}
+
+/* update button */
+form .button {
+  height: 45px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+}
+
+form .button input {
+  height: 100%;
+  width: 90%;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: lightseagreen;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .button input:hover {
+  background: lightsteelblue;
+}
+
+/* update password button */
+form .update-button {
+  height: 45px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+form .update-button input {
+  height: 100%;
+  width: 350%;
+  outline: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: lightseagreen;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .update-button input:hover {
+  background: lightsteelblue;
+}
+
+/* delete and cancel button */
+.other-button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.other-button input{
+  color: black;
+  background: lightgray;
+  width: 13rem;
+  height: 2.5rem;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cancel-btn{
+	padding-left: 70px;
+	cursor: pointer;
+}
+.cancel-btn:hover {
+  background-color: darkgray;
+}
+
+form .delete-btn {
+  color: black;
+  background-color: lightpink;
+  border: gray solid;
+  cursor: pointer;
+}
+form .delete-btn:hover {
+  color: white;
+  background-color: red;
+  border: gray solid;
+}
+
+@media only screen and (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user__details .input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .gender__details .category {
+    width: 100%;
+  }
+
+	form .update-button input {
+	  height: 100%;
+	  width: 200%;
+  }
+  .user__details::-webkit-scrollbar {
+    width: 0;
+  }
+}
